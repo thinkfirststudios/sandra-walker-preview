@@ -121,19 +121,10 @@
         </div>
 
         <div class="about-media reveal" style="--i:2">
-          <div class="frame frame--portrait" role="img" aria-label="Placeholder: Sandra’s headshot, to be supplied by Sandra">
-            <div class="frame-label">
-              <strong>Sandra’s headshot</strong>
-              <span class="rule-short"></span>
-              <span>4:5 portrait · Sandra to supply</span>
-            </div>
-          </div>
-          <div class="frame frame--wide" role="img" aria-label="Placeholder: a second portrait or working photograph of Sandra, to be supplied by Sandra">
-            <div class="frame-label">
-              <strong>Working shot</strong>
-              <span>3:2 · Sandra to supply</span>
-            </div>
-          </div>
+          <!-- Sandra's own headshot (240px source — swap in a larger original when available) -->
+          <figure class="portrait">
+            <img src="assets/sandra-headshot.jpg" width="240" height="240" decoding="async" alt="Sandra Walker">
+          </figure>
         </div>
       </div>
     </section>
@@ -144,9 +135,9 @@
         <div class="center-head">
           <p class="eyebrow reveal">Why work with me</p>
           <h2 class="visually-hidden" id="why-title">Why work with me</h2>
-          <figure class="quote quote--center reveal" style="--i:1">
+          <figure class="quote quote--center quote--two-line reveal" style="--i:1">
             <span class="qmark" aria-hidden="true">“</span>
-            <blockquote><p>Relationships are important to me. I want to build long-lasting relationships, not just clients.</p></blockquote>
+            <blockquote><p>Relationships are important to me.<br class="br-wide">I want to build long-lasting relationships, not just clients.</p></blockquote>
             <figcaption>Sandra Walker</figcaption>
           </figure>
         </div>
@@ -342,31 +333,20 @@
       </div>
     </section>
 
-    <!-- 6 · TESTIMONIALS — waiting space, nothing invented (B6) -->
+    <!-- 6 · TESTIMONIAL — one real public review, verbatim. No stars or ratings (B6). Needs the reviewer's written permission before launch (L8). -->
     <section class="section" id="testimonials" aria-labelledby="t-title">
       <div class="wrap">
         <div class="center-head">
-          <p class="eyebrow reveal">In their words</p>
-          <h2 class="section-title reveal" style="--i:1" id="t-title">From clients</h2>
+          <p class="eyebrow reveal">In a client’s words</p>
+          <h2 class="visually-hidden" id="t-title">A client review</h2>
         </div>
-        <div class="quotes">
-          <figure class="quote-card reveal">
-            <span class="qmark" aria-hidden="true">“</span>
-            <blockquote><p>[Client testimonial goes here]</p></blockquote>
-            <span class="wait" aria-hidden="true"></span>
-          </figure>
-          <figure class="quote-card reveal" style="--i:1">
-            <span class="qmark" aria-hidden="true">“</span>
-            <blockquote><p>[Client testimonial goes here]</p></blockquote>
-            <span class="wait" aria-hidden="true"></span>
-          </figure>
-          <figure class="quote-card reveal" style="--i:2">
-            <span class="qmark" aria-hidden="true">“</span>
-            <blockquote><p>[Client testimonial goes here]</p></blockquote>
-            <span class="wait" aria-hidden="true"></span>
-          </figure>
-        </div>
-        <p class="quotes-note">[Testimonials to be added with each client’s written permission]</p>
+        <figure class="review reveal" style="--i:1">
+          <span class="qmark" aria-hidden="true">“</span>
+          <blockquote>
+            <p>Sandra is very polite and knowledgeable. As a first time home buyer seeking to buy a home. She presented a lot of options and information that helped tremendously. I would highly recommend her.</p>
+          </blockquote>
+          <figcaption>First-time home buyer · July 2020</figcaption>
+        </figure>
       </div>
     </section>
 
