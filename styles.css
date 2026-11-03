@@ -298,6 +298,9 @@ p { margin: 0; }
   display: block; font-family: var(--serif); font-size: 5rem; line-height: .8; height: 2.6rem; font-weight: 600; color: var(--brass);
 }
 .quote blockquote { margin: 0; }
+.q { color: var(--brass); font-family: var(--serif); font-weight: 600; }
+.photo-credits { font-size: .82rem; color: var(--soft); line-height: 1.6; }
+.photo-credits a { color: var(--soft); }
 .quote blockquote p {
   font-family: var(--serif); font-size: clamp(1.35rem, 1.1rem + 1vw, 1.8rem); font-weight: 400; line-height: 1.42; color: var(--ink);
 }
