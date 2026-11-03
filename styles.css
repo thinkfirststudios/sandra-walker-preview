@@ -271,6 +271,15 @@ p { margin: 0; }
 }
 
 /* ---------- about ---------- */
+/* About: a low-opacity landscape behind the section (stock, decorative) */
+#about { position: relative; isolation: isolate; overflow: hidden; }
+#about::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(245, 241, 232, .94) 0%, rgba(245, 241, 232, .88) 50%, rgba(245, 241, 232, .80) 100%),
+    url("https://images.pexels.com/photos/36949787/pexels-photo-36949787.jpeg?auto=compress&cs=tinysrgb&w=1600") center 40% / cover no-repeat;
+}
+
 .about-grid { display: grid; gap: 3.5rem; align-items: center; }
 @media (min-width: 960px) { .about-grid { grid-template-columns: 1.05fr .95fr; gap: 5rem; } }
 .about-text > * + * { margin-top: 1.5rem; }
@@ -375,7 +384,9 @@ p { margin: 0; }
   border-top: 4px solid var(--brass);
   padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 4rem);
 }
-.review .qmark { display: block; font-family: var(--serif); font-size: 5rem; line-height: .8; height: 2.6rem; font-weight: 600; color: var(--brass); }
+.review-stars { display: inline-flex; align-items: center; gap: .3rem; }
+.review-stars svg { width: 24px; height: 24px; fill: var(--brass); }
+.review-stars span { margin-left: .5rem; font-weight: 700; font-size: .95rem; color: var(--brass-deep); }
 .review blockquote { margin: 1.25rem 0 0; }
 .review blockquote p { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 1rem + .9vw, 1.6rem); line-height: 1.5; color: var(--indigo-deep); }
 .review figcaption { margin-top: 1.5rem; font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
@@ -394,6 +405,7 @@ p { margin: 0; }
 .contact-direct { margin: 2.25rem 0 0; display: grid; gap: 1rem; }
 .contact-direct div { border-top: 1px solid rgba(255, 255, 255, .2); padding-top: 1rem; }
 .contact-direct dt { font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #D7E7EB; }
+.contact-direct dd a { color: #fff; text-decoration-color: var(--brass); text-underline-offset: 4px; overflow-wrap: anywhere; }
 .contact-direct dd { margin: .3rem 0 0; font-family: var(--serif); font-size: clamp(1.3rem, 1rem + 1vw, 1.75rem); font-weight: 500; }
 
 .form { display: grid; gap: 1.1rem; background: var(--white); color: var(--ink); border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.25rem); }
