@@ -221,15 +221,21 @@ p { margin: 0; }
 }
 .hero-media { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: var(--green-deep); }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-media img { object-position: center 55%; filter: saturate(1.08) brightness(1.04); }
 .hero-media::after {
+  /* light touch: shade only where the type sits, plus a little at the top for the menu */
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(1, 36, 29, .80) 0%, rgba(2, 55, 45, .42) 45%, rgba(1, 36, 29, .86) 100%);
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 48%, rgba(1, 36, 29, .60) 0%, rgba(1, 36, 29, .26) 60%, rgba(1, 36, 29, 0) 100%),
+    linear-gradient(180deg, rgba(1, 36, 29, .45) 0%, rgba(1, 36, 29, 0) 22%, rgba(1, 36, 29, 0) 78%, rgba(1, 36, 29, .30) 100%);
 }
+.hero-inner { text-shadow: 0 2px 18px rgba(1, 36, 29, .55), 0 1px 3px rgba(1, 36, 29, .5); }
+.hero-inner .btn { text-shadow: none; }
 .hero-media .stock-tag { z-index: 2; bottom: 100px; }
 .hero-inner { display: flex; flex-direction: column; align-items: center; }
 .hero-sub {
   display: inline-flex; align-items: center; gap: .9rem;
-  font-size: .85rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #E9DFC9;
+  font-size: .85rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #FFFFFF;
 }
 .hero-sub::before, .hero-sub::after { content: ""; width: 32px; height: 1.5px; background: var(--brass); }
 @media (max-width: 599px) { .hero-sub::before, .hero-sub::after { display: none; } }
