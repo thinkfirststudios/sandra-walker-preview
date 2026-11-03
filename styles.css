@@ -326,6 +326,15 @@ p { margin: 0; }
 }
 .portrait::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--brass); }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.portrait--empty {
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;
+  background: linear-gradient(160deg, #FBF9F4 0%, #EAE3D3 100%);
+}
+.portrait--empty::before { content: ""; position: absolute; inset: 16px; border: 1.5px dashed #CDBF9F; border-radius: 18px; pointer-events: none; }
+.portrait-label { position: relative; }
+.portrait-label strong { display: block; font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--indigo); }
+.portrait-label .rule-short { display: block; width: 40px; height: 2px; background: var(--brass); margin: .9rem auto; }
+.portrait-label span:last-child { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
 
 /* ---------- why (Columbia mist band) ---------- */
 .points { list-style: none; margin: 3.5rem 0 0; padding: 0; display: grid; gap: 1.25rem; }
