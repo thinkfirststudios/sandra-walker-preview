@@ -271,9 +271,9 @@ p { margin: 0; }
 }
 
 /* ---------- about ---------- */
-/* About: a low-opacity landscape behind the section (stock, decorative) */
-#about { position: relative; isolation: isolate; overflow: hidden; }
-#about::before {
+/* Fair Housing + About: one low-opacity landscape behind both (stock, decorative) */
+.about-wrap { position: relative; isolation: isolate; display: flow-root; }
+.about-wrap::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
     linear-gradient(90deg, rgba(245, 241, 232, .94) 0%, rgba(245, 241, 232, .88) 50%, rgba(245, 241, 232, .80) 100%),
