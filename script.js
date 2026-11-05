@@ -1,4 +1,4 @@
-/* Sandra Walker — mockup behaviour. No tracking, no third-party scripts. */
+/* Sandra Walker: site behaviour. No tracking, no third-party scripts. */
 (function () {
   'use strict';
 
@@ -52,13 +52,16 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
-  /* Contact form: name + one way to reply. Nothing else is required. */
+  /* Contact form: name + one way to reply. Nothing else is required.
+     Submissions post to the Formspree URL in the form's action attribute (index.html). */
   var form = document.getElementById('contact-form');
   if (!form) return;
 
   var nameEl = form.querySelector('#f-name');
   var emailEl = form.querySelector('#f-email');
   var phoneEl = form.querySelector('#f-phone');
+  var sendBtn = form.querySelector('button[type="submit"]');
+  var statusEl = document.getElementById('form-status');
 
   function setError(input, msgId, msg) {
     var out = document.getElementById(msgId);
@@ -103,6 +106,12 @@
     });
   });
 
+  function showFailure() {
+    sendBtn.disabled = false;
+    statusEl.textContent = 'Sorry, your message couldn’t be sent. Please call Sandra at (914) 316-3440 or email sandy52299@verizon.net.';
+    statusEl.focus();
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     form.dataset.tried = '1';
@@ -111,7 +120,16 @@
       if (first) first.focus();
       return;
     }
-    /* Mockup: nothing is sent. The live handler is [FORM HANDLER — CONFIRM]. */
-    window.location.href = 'thanks.html';
+    statusEl.textContent = '';
+    var endpoint = form.getAttribute('action');
+    if (endpoint.indexOf('YOUR_FORM_ID') !== -1) { showFailure(); return; }
+
+    sendBtn.disabled = true;
+    fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (res) {
+        if (res.ok) window.location.href = 'thanks.html';
+        else showFailure();
+      })
+      .catch(showFailure);
   });
 })();
